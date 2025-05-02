@@ -18,7 +18,7 @@ Ideal para proyectos .NET donde necesitás una conexión desacoplada y reutiliza
 
 ---
 
-## 🚀 Instalación
+##  Instalación
 
 1. Cloná o descargá este repositorio.
 2. Referenciá la biblioteca en tu proyecto .NET (como proyecto o como `.dll`).
@@ -26,7 +26,7 @@ Ideal para proyectos .NET donde necesitás una conexión desacoplada y reutiliza
 
 ---
 
-## 🧪 Cómo usar la clase `Conect`
+##  Cómo usar la clase `Conect`
 
 La clase `Conect` permite conectarte a cualquier base de datos compatible con ADO.NET usando el proveedor adecuado y una cadena de conexión.
 
