@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tinch\\OneDrive\\Documentos\\IDRA\\2do A\u00F1o\\Programacion 2\\DLLs\\Conex\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BBBED52F-9C07-4432-A2C5-94D3DE1D4250}|ConectionBD\\ConectionBD.csproj|c:\\users\\tinch\\onedrive\\documentos\\idra\\2do a\u00F1o\\programacion 2\\dlls\\conex\\conectionbd\\conect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBBED52F-9C07-4432-A2C5-94D3DE1D4250}|ConectionBD\\ConectionBD.csproj|solutionrelative:conectionbd\\conect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Conect.cs",
+              "DocumentMoniker": "C:\\Users\\tinch\\OneDrive\\Documentos\\IDRA\\2do A\u00F1o\\Programacion 2\\DLLs\\Conex\\ConectionBD\\Conect.cs",
+              "RelativeDocumentMoniker": "ConectionBD\\Conect.cs",
+              "ToolTip": "C:\\Users\\tinch\\OneDrive\\Documentos\\IDRA\\2do A\u00F1o\\Programacion 2\\DLLs\\Conex\\ConectionBD\\Conect.cs",
+              "RelativeToolTip": "ConectionBD\\Conect.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAYwA0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T14:55:25.94Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
