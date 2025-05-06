@@ -1,0 +1,12 @@
+C:\Users\tinch\OneDrive\Documentos\IDRA\2do Año\Programacion 2\DLLs\Conex\ConectionBD\bin\Debug\net8.0\ConectionBD.deps.json
+C:\Users\tinch\OneDrive\Documentos\IDRA\2do Año\Programacion 2\DLLs\Conex\ConectionBD\bin\Debug\net8.0\ConectionBD.dll
+C:\Users\tinch\OneDrive\Documentos\IDRA\2do Año\Programacion 2\DLLs\Conex\ConectionBD\bin\Debug\net8.0\ConectionBD.pdb
+C:\Users\tinch\OneDrive\Documentos\IDRA\2do Año\Programacion 2\DLLs\Conex\ConectionBD\obj\Debug\net8.0\ConectionBD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tinch\OneDrive\Documentos\IDRA\2do Año\Programacion 2\DLLs\Conex\ConectionBD\obj\Debug\net8.0\ConectionBD.AssemblyInfoInputs.cache
+C:\Users\tinch\OneDrive\Documentos\IDRA\2do Año\Programacion 2\DLLs\Conex\ConectionBD\obj\Debug\net8.0\ConectionBD.AssemblyInfo.cs
+C:\Users\tinch\OneDrive\Documentos\IDRA\2do Año\Programacion 2\DLLs\Conex\ConectionBD\obj\Debug\net8.0\ConectionBD.csproj.CoreCompileInputs.cache
+C:\Users\tinch\OneDrive\Documentos\IDRA\2do Año\Programacion 2\DLLs\Conex\ConectionBD\obj\Debug\net8.0\ConectionBD.sourcelink.json
+C:\Users\tinch\OneDrive\Documentos\IDRA\2do Año\Programacion 2\DLLs\Conex\ConectionBD\obj\Debug\net8.0\ConectionBD.dll
+C:\Users\tinch\OneDrive\Documentos\IDRA\2do Año\Programacion 2\DLLs\Conex\ConectionBD\obj\Debug\net8.0\refint\ConectionBD.dll
+C:\Users\tinch\OneDrive\Documentos\IDRA\2do Año\Programacion 2\DLLs\Conex\ConectionBD\obj\Debug\net8.0\ConectionBD.pdb
+C:\Users\tinch\OneDrive\Documentos\IDRA\2do Año\Programacion 2\DLLs\Conex\ConectionBD\obj\Debug\net8.0\ref\ConectionBD.dll

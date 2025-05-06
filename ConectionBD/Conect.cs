@@ -57,6 +57,132 @@ namespace ConectionBD
             return conexion;
         }
 
+        //Este método ejecuta un SELECT y devuelve los resultados en un DataTable.
+        public DataTable EjecutarConsulta(string sql, Dictionary<string, object>? parametros = null)
+        {
+            // Se crea una tabla vacía que contendrá los resultados de la consulta
+            var dt = new DataTable();
+
+            // Verifica que la conexión esté abierta; si no, lanza una excepción
+            if (conexion == null || conexion.State != ConnectionState.Open)
+                throw new InvalidOperationException("No hay conexión abierta.");
+
+            // Crea un comando sobre la conexión abierta
+            using (var comando = conexion.CreateCommand())
+            {
+                // Asigna el texto de la consulta SQL al comando
+                comando.CommandText = sql;
+
+                // Si hay parámetros, se agregan al comando uno por uno
+                if (parametros != null)
+                {
+                    foreach (var param in parametros)
+                    {
+                        var dbParametro = comando.CreateParameter();  // Crea un parámetro
+                        dbParametro.ParameterName = param.Key;        // Nombre del parámetro
+                        dbParametro.Value = param.Value;              // Valor del parámetro
+                        comando.Parameters.Add(dbParametro);          // Lo agrega al comando
+                    }
+                }
+
+                // Ejecuta el comando y llena el DataTable con los resultados del lector
+                using (var reader = comando.ExecuteReader())
+                {
+                    dt.Load(reader); // Carga todas las filas que devuelve la consulta
+                }
+            }
+
+            // Devuelve el DataTable con los resultados
+            return dt;
+        }
+
+        public List<Dictionary<string, object>> EjecutarConsulta(string sql)
+        {
+            if (conexion == null || conexion.State != ConnectionState.Open)
+                throw new InvalidOperationException("No hay conexión abierta.");
+
+            var resultados = new List<Dictionary<string, object>>();
+
+            using (var comando = conexion.CreateCommand())
+            {
+                comando.CommandText = sql;
+
+                using (var reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var fila = new Dictionary<string, object>();
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            fila[reader.GetName(i)] = reader.GetValue(i);
+                        }
+                        resultados.Add(fila);
+                    }
+                }
+            }
+
+            return resultados;
+        }
+
+
+
+        //Este método ejecuta comandos como INSERT, UPDATE o DELETE y devuelve cuántas filas fueron afectadas.
+        public int EjecutarComando(string sql, Dictionary<string, object>? parametros = null)
+        {
+            // Verifica que la conexión esté abierta antes de ejecutar el comando
+            if (conexion == null || conexion.State != ConnectionState.Open)
+                throw new InvalidOperationException("No hay conexión abierta.");
+
+            // Crea un comando sobre la conexión abierta
+            using (var comando = conexion.CreateCommand())
+            {
+                // Asigna la consulta SQL al comando
+                comando.CommandText = sql;
+
+                // Si hay parámetros, los agrega al comando
+                if (parametros != null)
+                {
+                    foreach (var param in parametros)
+                    {
+                        var dbParametro = comando.CreateParameter();  // Crea un nuevo parámetro
+                        dbParametro.ParameterName = param.Key;        // Nombre del parámetro
+                        dbParametro.Value = param.Value;              // Valor del parámetro
+                        comando.Parameters.Add(dbParametro);          // Lo agrega al comando
+                    }
+                }
+
+                // Ejecuta el comando y devuelve el número de filas afectadas
+                return comando.ExecuteNonQuery();
+            }
+        }
+
+        public int InsertarDatos(string tabla, Dictionary<string, object> datos)
+        {
+            if (conexion == null || conexion.State != ConnectionState.Open)
+                throw new InvalidOperationException("No hay conexión abierta.");
+
+            var columnas = string.Join(", ", datos.Keys);
+            var parametros = string.Join(", ", datos.Keys.Select(k => "@" + k));
+
+            string sql = $"INSERT INTO {tabla} ({columnas}) VALUES ({parametros})";
+
+            using (var comando = conexion.CreateCommand())
+            {
+                comando.CommandText = sql;
+
+                foreach (var dato in datos)
+                {
+                    var parametro = comando.CreateParameter();
+                    parametro.ParameterName = "@" + dato.Key;
+                    parametro.Value = dato.Value;
+                    comando.Parameters.Add(parametro);
+                }
+
+                return comando.ExecuteNonQuery(); // Devuelve cuántas filas se insertaron
+            }
+        }
+
+
     }
 }
 //COMO USAR LA BIBLIOTECA? :
@@ -66,6 +192,7 @@ namespace ConectionBD
 var conexion = new Conexion();
 
 // Ejemplo con SQLite
+ private string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "tiendaDB.db");  
 string cadena = "Data Source=miBase.db;";
 string proveedor = "Microsoft.Data.Sqlite"; // Nombre del provider
 
